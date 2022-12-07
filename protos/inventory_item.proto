@@ -1,0 +1,19 @@
+syntax = "proto3";
+import "book.proto";
+
+/**
+A message representing an item in the inventory.
+ */
+message InventoryItem {
+  // The number of inventory.
+  int32 inventory_number = 1;
+  oneof item {
+    // The book in the inventory.
+    Book book = 2;
+  }
+}
+
+enum Status {
+  AVAILABLE = 0;
+  TAKEN = 1;
+}
