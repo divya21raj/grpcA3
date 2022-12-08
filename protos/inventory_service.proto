@@ -1,0 +1,20 @@
+syntax = "proto3";
+import "book.proto";
+
+service CreateBook {
+  rpc CreateBook(CreateBookRequest) returns (CreateBookResponse) {}
+
+  rpc GetBook(GetBookRequest) returns (Book) {}
+}
+
+message CreateBookRequest {
+  Book book = 1;
+}
+
+message CreateBookResponse {
+  string id = 1;
+}
+
+message GetBookRequest {
+  string isbn = 1;
+}
