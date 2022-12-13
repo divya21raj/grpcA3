@@ -18,7 +18,7 @@ class CreateBookStub(object):
         self.CreateBook = channel.unary_unary(
                 '/CreateBook/CreateBook',
                 request_serializer=inventory__service__pb2.CreateBookRequest.SerializeToString,
-                response_deserializer=inventory__service__pb2.CreateBookResponse.FromString,
+                response_deserializer=inventory__service__pb2.Response.FromString,
                 )
         self.GetBook = channel.unary_unary(
                 '/CreateBook/GetBook',
@@ -48,7 +48,7 @@ def add_CreateBookServicer_to_server(servicer, server):
             'CreateBook': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateBook,
                     request_deserializer=inventory__service__pb2.CreateBookRequest.FromString,
-                    response_serializer=inventory__service__pb2.CreateBookResponse.SerializeToString,
+                    response_serializer=inventory__service__pb2.Response.SerializeToString,
             ),
             'GetBook': grpc.unary_unary_rpc_method_handler(
                     servicer.GetBook,
@@ -78,7 +78,7 @@ class CreateBook(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/CreateBook/CreateBook',
             inventory__service__pb2.CreateBookRequest.SerializeToString,
-            inventory__service__pb2.CreateBookResponse.FromString,
+            inventory__service__pb2.Response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

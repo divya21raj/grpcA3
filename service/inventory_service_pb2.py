@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 import book_pb2 as book__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17inventory_service.proto\x1a\nbook.proto\"(\n\x11\x43reateBookRequest\x12\x13\n\x04\x62ook\x18\x01 \x01(\x0b\x32\x05.Book\" \n\x12\x43reateBookResponse\x12\n\n\x02id\x18\x01 \x01(\t\"\x1e\n\x0eGetBookRequest\x12\x0c\n\x04isbn\x18\x01 \x01(\t2j\n\nCreateBook\x12\x37\n\nCreateBook\x12\x12.CreateBookRequest\x1a\x13.CreateBookResponse\"\x00\x12#\n\x07GetBook\x12\x0f.GetBookRequest\x1a\x05.Book\"\x00\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17inventory_service.proto\x1a\nbook.proto\"(\n\x11\x43reateBookRequest\x12\x13\n\x04\x62ook\x18\x01 \x01(\x0b\x32\x05.Book\"\x18\n\x08Response\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x05\"\x1e\n\x0eGetBookRequest\x12\x0c\n\x04isbn\x18\x01 \x01(\t2`\n\nCreateBook\x12-\n\nCreateBook\x12\x12.CreateBookRequest\x1a\t.Response\"\x00\x12#\n\x07GetBook\x12\x0f.GetBookRequest\x1a\x05.Book\"\x00\x62\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'inventory_service_pb2', globals())
@@ -23,10 +23,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   _CREATEBOOKREQUEST._serialized_start=39
   _CREATEBOOKREQUEST._serialized_end=79
-  _CREATEBOOKRESPONSE._serialized_start=81
-  _CREATEBOOKRESPONSE._serialized_end=113
-  _GETBOOKREQUEST._serialized_start=115
-  _GETBOOKREQUEST._serialized_end=145
-  _CREATEBOOK._serialized_start=147
-  _CREATEBOOK._serialized_end=253
+  _RESPONSE._serialized_start=81
+  _RESPONSE._serialized_end=105
+  _GETBOOKREQUEST._serialized_start=107
+  _GETBOOKREQUEST._serialized_end=137
+  _CREATEBOOK._serialized_start=139
+  _CREATEBOOK._serialized_end=235
 # @@protoc_insertion_point(module_scope)

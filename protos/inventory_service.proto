@@ -2,7 +2,7 @@ syntax = "proto3";
 import "book.proto";
 
 service CreateBook {
-  rpc CreateBook(CreateBookRequest) returns (CreateBookResponse) {}
+  rpc CreateBook(CreateBookRequest) returns (Response) {}
 
   rpc GetBook(GetBookRequest) returns (Book) {}
 }
@@ -11,8 +11,8 @@ message CreateBookRequest {
   Book book = 1;
 }
 
-message CreateBookResponse {
-  string id = 1;
+message Response {
+  int32 code = 1;
 }
 
 message GetBookRequest {

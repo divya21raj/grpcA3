@@ -11,14 +11,14 @@ class CreateBookRequest(_message.Message):
     book: _book_pb2.Book
     def __init__(self, book: _Optional[_Union[_book_pb2.Book, _Mapping]] = ...) -> None: ...
 
-class CreateBookResponse(_message.Message):
-    __slots__ = ["id"]
-    ID_FIELD_NUMBER: _ClassVar[int]
-    id: str
-    def __init__(self, id: _Optional[str] = ...) -> None: ...
-
 class GetBookRequest(_message.Message):
     __slots__ = ["isbn"]
     ISBN_FIELD_NUMBER: _ClassVar[int]
     isbn: str
     def __init__(self, isbn: _Optional[str] = ...) -> None: ...
+
+class Response(_message.Message):
+    __slots__ = ["code"]
+    CODE_FIELD_NUMBER: _ClassVar[int]
+    code: int
+    def __init__(self, code: _Optional[int] = ...) -> None: ...
