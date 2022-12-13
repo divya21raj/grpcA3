@@ -19,7 +19,18 @@ class Server(InventoryServiceServicer):
             "isbn": "isbn1",
             "published_year": -289307578,
             "title": "ad pariatur"
-        }
+        },
+        "isbn2": {
+            "author": {
+                "birth_year": -2057565939,
+                "first_name": "ad nisi",
+                "last_name": "dolor cupidatat non elit anim"
+            },
+            "genre": "UNKNOWN",
+            "isbn": "isbn2",
+            "published_year": -289307578,
+            "title": "ad pariatur"
+        },
     }
 
     def CreateBook(self, request, context):

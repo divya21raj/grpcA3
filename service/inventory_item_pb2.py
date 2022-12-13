@@ -14,15 +14,15 @@ _sym_db = _symbol_database.Default()
 import book_pb2 as book__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14inventory_item.proto\x1a\nbook.proto\"H\n\rInventoryItem\x12\x18\n\x10inventory_number\x18\x01 \x01(\x05\x12\x15\n\x04\x62ook\x18\x02 \x01(\x0b\x32\x05.BookH\x00\x42\x06\n\x04item*\"\n\x06Status\x12\r\n\tAVAILABLE\x10\x00\x12\t\n\x05TAKEN\x10\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14inventory_item.proto\x1a\nbook.proto\"a\n\rInventoryItem\x12\x18\n\x10inventory_number\x18\x01 \x01(\x05\x12\x15\n\x04\x62ook\x18\x02 \x01(\x0b\x32\x05.BookH\x00\x12\x17\n\x06status\x18\x03 \x01(\x0e\x32\x07.StatusB\x06\n\x04item*\"\n\x06Status\x12\r\n\tAVAILABLE\x10\x00\x12\t\n\x05TAKEN\x10\x01\x62\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'inventory_item_pb2', globals())
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  _STATUS._serialized_start=110
-  _STATUS._serialized_end=144
+  _STATUS._serialized_start=135
+  _STATUS._serialized_end=169
   _INVENTORYITEM._serialized_start=36
-  _INVENTORYITEM._serialized_end=108
+  _INVENTORYITEM._serialized_end=133
 # @@protoc_insertion_point(module_scope)

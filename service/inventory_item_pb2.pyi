@@ -9,12 +9,14 @@ DESCRIPTOR: _descriptor.FileDescriptor
 TAKEN: Status
 
 class InventoryItem(_message.Message):
-    __slots__ = ["book", "inventory_number"]
+    __slots__ = ["book", "inventory_number", "status"]
     BOOK_FIELD_NUMBER: _ClassVar[int]
     INVENTORY_NUMBER_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
     book: _book_pb2.Book
     inventory_number: int
-    def __init__(self, inventory_number: _Optional[int] = ..., book: _Optional[_Union[_book_pb2.Book, _Mapping]] = ...) -> None: ...
+    status: Status
+    def __init__(self, inventory_number: _Optional[int] = ..., book: _Optional[_Union[_book_pb2.Book, _Mapping]] = ..., status: _Optional[_Union[Status, str]] = ...) -> None: ...
 
 class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = []
