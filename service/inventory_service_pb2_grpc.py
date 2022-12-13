@@ -6,7 +6,7 @@ import book_pb2 as book__pb2
 import inventory_service_pb2 as inventory__service__pb2
 
 
-class CreateBookStub(object):
+class InventoryServiceStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -16,18 +16,18 @@ class CreateBookStub(object):
             channel: A grpc.Channel.
         """
         self.CreateBook = channel.unary_unary(
-                '/CreateBook/CreateBook',
+                '/InventoryService/CreateBook',
                 request_serializer=inventory__service__pb2.CreateBookRequest.SerializeToString,
                 response_deserializer=inventory__service__pb2.Response.FromString,
                 )
         self.GetBook = channel.unary_unary(
-                '/CreateBook/GetBook',
+                '/InventoryService/GetBook',
                 request_serializer=inventory__service__pb2.GetBookRequest.SerializeToString,
                 response_deserializer=book__pb2.Book.FromString,
                 )
 
 
-class CreateBookServicer(object):
+class InventoryServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def CreateBook(self, request, context):
@@ -43,7 +43,7 @@ class CreateBookServicer(object):
         raise NotImplementedError('Method not implemented!')
 
 
-def add_CreateBookServicer_to_server(servicer, server):
+def add_InventoryServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'CreateBook': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateBook,
@@ -57,12 +57,12 @@ def add_CreateBookServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'CreateBook', rpc_method_handlers)
+            'InventoryService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
  # This class is part of an EXPERIMENTAL API.
-class CreateBook(object):
+class InventoryService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
@@ -76,7 +76,7 @@ class CreateBook(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/CreateBook/CreateBook',
+        return grpc.experimental.unary_unary(request, target, '/InventoryService/CreateBook',
             inventory__service__pb2.CreateBookRequest.SerializeToString,
             inventory__service__pb2.Response.FromString,
             options, channel_credentials,
@@ -93,7 +93,7 @@ class CreateBook(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/CreateBook/GetBook',
+        return grpc.experimental.unary_unary(request, target, '/InventoryService/GetBook',
             inventory__service__pb2.GetBookRequest.SerializeToString,
             book__pb2.Book.FromString,
             options, channel_credentials,

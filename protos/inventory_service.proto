@@ -1,7 +1,7 @@
 syntax = "proto3";
 import "book.proto";
 
-service CreateBook {
+service InventoryService {
   rpc CreateBook(CreateBookRequest) returns (Response) {}
 
   rpc GetBook(GetBookRequest) returns (Book) {}

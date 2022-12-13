@@ -4,10 +4,10 @@ from concurrent import futures
 import grpc
 
 import inventory_service_pb2, book_pb2, inventory_service_pb2_grpc
-from inventory_service_pb2_grpc import CreateBookServicer
+from inventory_service_pb2_grpc import InventoryServiceServicer
 
 
-class Server(CreateBookServicer):
+class Server(InventoryServiceServicer):
     book_dict = {
         "isbn1": {
             "author": {
@@ -41,7 +41,7 @@ class Server(CreateBookServicer):
 
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
-    inventory_service_pb2_grpc.add_CreateBookServicer_to_server(Server(), server)
+    inventory_service_pb2_grpc.add_InventoryServiceServicer_to_server(Server(), server)
     server.add_insecure_port('[::]:50051')
     server.start()
     server.wait_for_termination()
